@@ -2,8 +2,8 @@
 
 &emsp;This is a self-made resume for studying Docker, feel free to use or/and make pull-requests! :)</br>
 
-&emsp;Special thanks to Mateus Muller, who inspired me to build this resume, the video where part of this content came from is at the first reference.</br>
-&emsp;At [references](#references) there is many others contents i judged important while studying about docker and all the peripheral knowledge </br>
+&emsp;Special thanks to [Mateus Muller](https://mateusmuller.me/), who inspired me to build this resume, the video where part of this content came from is [here](https://www.youtube.com/watch?v=RE31GWJGkwA&ab_channel=MateusMuller).</br>
+&emsp;At [references](#references-and-other-content) there is many others contents i judged important while studying about docker and all the peripheral knowledge.</br>
 
 ## Authors
 
@@ -25,7 +25,7 @@
 
 ![FirstImage](./images/FirstImage.png)
 
-&emsp;While container was not used, in his place was used hypervisors. Hypervisors are still used nowadays, but they make necessary many others components to make it work. The main components this way needs are: Hardware, HyperVisor, VirtualMachine, OperatingSystem and finally the application. You can see that with the hypervisor, a simple task like launch a app becomes a hard work </br>
+&emsp;While container was not used, in his place was used hypervisors. Hypervisors are still used nowadays, but they make necessary many others components to make it work. The main components this way needs are: Hardware, HyperVisor, VirtualMachine, OperatingSystem and finally the application. You can see that with the hypervisor, a simple task like launch a app becomes a hard work.</br>
 &emsp;At last, using a hypervisor, three bad things comes together, hardware farewell, this happens because a need a whole OS to run the app, so i need a dedicated hardware of this OS, second thing is libs hard management, this happens because some libs can be deprecated and the app can use different libs than the OS uses, last thing is the fact of not being mutable, it means that each environment can be different.</br>
 
 ## **Container Idea**
@@ -38,7 +38,7 @@
 
 ## **Installing Docker**
 
-&emsp;The docker installation is very simple, just copy and past commands. The official guide is at this link below</br>
+&emsp;The docker installation is very simple, just copy and past commands. The official guide is at this link below.</br>
 
 - [Official Docker Installation Guide](https://docs.docker.com/engine/install/)
 
@@ -63,7 +63,7 @@
 &emsp;This guy is also called by Docker Daemon and its basically the a service at the machine were the docker is running. You can use the Client to interact directly with the Docker Daemon is self. Something important about the Host is that you don't need to have him at your machine to use the Client, the Host can be in a server machine and you can interact with this Host using your local machine just using the Client.</br>
 
 - Registry</br>
-&emsp;You can think the registry just like a place were the images docker can use are saved and you can download and use on your machine. There are many registry's some more used and reliable than others, the most famous is the DockerHub</br>
+&emsp;You can think the registry just like a place were the images docker can use are saved and you can download and use on your machine. There are many registry's some more used and reliable than others, the most famous is the DockerHub.</br>
 
 ## **Creating a Docker image**
 
@@ -91,7 +91,7 @@
 &emsp;But why this stack system exists? This is very useful to create the container, the ultimate goal when using Docker. When you ask your image to create the container it is just necessary to create one more layer on all others pre-existent.</br>
 &emsp;Now there is something important to understand, the image is immutable and read-only (RO), the new layer to be created is the container it self and is read-write (RW), this means you can change the content of the container but not image's. It makes really fast and easy the deploy, start, stop, run, delete, all the actions involving the container.</br>
 
-## References and other content
+## **References and other content**
 
 1. <https://www.youtube.com/watch?v=RE31GWJGkwA&ab_channel=MateusMuller>
 2. <https://docs.docker.com/get-docker/>
