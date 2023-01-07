@@ -1,6 +1,9 @@
 # Docker-Studies
 
-This is a self-made resume that i made for studying Docker, feel free to use or make pull-requests! :)
+&emsp;This is a self-made resume that i made for studying Docker, feel free to use or make pull-requests! :)</br>
+
+&emsp;Special thanks to Mateus Muller, who inspired me to build this resume, the video where part of this content came from is at the first reference.</br>
+&emsp;At [references](#references) there is many others contents i judged important while studying about docker and all the peripheral knowledge </br>
 
 ## Authors
 
@@ -47,8 +50,6 @@ This is a self-made resume that i made for studying Docker, feel free to use or 
 
 - [Docker Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall/)
 
-&emsp;</br>
-
 ## **Docker Architecture**
 
 ![ThirdImage](./images/ThirdImage.png)
@@ -86,10 +87,15 @@ This is a self-made resume that i made for studying Docker, feel free to use or 
 - CMD</br>
 &emsp;Witch command will be executed you use the ```docker run``` </br>
 
-## References
+&emsp;Now let's talk about the image creation it self. When you run the dockerfile, each one of all those parameters you set at the text file is gonna be created as a layer at the image. Every layer created after another one is gonna be pushed on top of the image, like a stack.</br>
+&emsp;But why this stack system exists? This is very useful to create the container, the ultimate goal when using Docker. When you ask your image to create the container it is just necessary to create one more layer on all others pre-existent.</br>
+&emsp;Now there is something important to understand, the image is immutable and read-only (RO), the new layer to be created is the container it self and is read-write (RW), this means you can change the content of the container but not image's. It makes really fast and easy the deploy, start, stop, run, delete, all the actions involving the container.</br>
+
+## References and other content
 
 1. <https://www.youtube.com/watch?v=RE31GWJGkwA&ab_channel=MateusMuller>
-
 2. <https://docs.docker.com/get-docker/>
-
 3. <https://docs.docker.com/engine/reference/builder/>
+4. <https://docs.docker.com/storage/storagedriver/overlayfs-driver/>
+5. <https://man7.org/linux/man-pages/man7/namespaces.7.html>
+6. <https://itsfoss.com/linux-daemons/>
