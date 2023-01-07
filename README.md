@@ -1,6 +1,6 @@
 # Docker-Studies
 
-&emsp;This is a self-made resume that i made for studying Docker, feel free to use or make pull-requests! :)</br>
+&emsp;This is a self-made resume for studying Docker, feel free to use or/and make pull-requests! :)</br>
 
 &emsp;Special thanks to Mateus Muller, who inspired me to build this resume, the video where part of this content came from is at the first reference.</br>
 &emsp;At [references](#references) there is many others contents i judged important while studying about docker and all the peripheral knowledge </br>
