@@ -13,6 +13,8 @@ This is a self-made resume that i made for studying Docker, feel free to use or 
 [Before Container](#before-container)</br>
 [Container Idea](#container-idea)</br>
 [Docker Architecture](#docker-architecture)</br>
+[Installing Docker](#installing-docker)</br>
+[Creating a Docker image](#creating-a-docker-image)</br>
 
 ---
 
@@ -31,6 +33,63 @@ This is a self-made resume that i made for studying Docker, feel free to use or 
 </br>
 &emsp;As the hypervisor had disadvantages, the containers has advantages. First and already sad, resources optimization, second one is application packaging, this resolves the problem of different libs and versions of the same program. The third one is immutability, this quality comes with the second advantage. At last we have ease of deployment, i think this is the main purpose when using containers, it comes with all others over.</br>
 
+## **Installing Docker**
+
+&emsp;The docker installation is very simple, just copy and past commands. The official guide is at this link below</br>
+
+- [Official Docker Installation Guide](https://docs.docker.com/engine/install/)
+
+&emsp;After installing it you maybe face a common problem, the permission. When you try to use the docker Client (use the ```docker``` command at the command line) you might receive a error message saying you don't have permission to use that command. This happens because your user is not able to access the docker group by default, this group is created when you install the docker on your computer, so you have to add your user to the group manually.</br>
+
+![ErrorMessage](./images/ErrorMessage.png)
+
+&emsp;To solve solve this problem it is very simple, just follow some steps at the official documentation bellow, those are some post-installation steps.</br>
+
+- [Docker Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall/)
+
+&emsp;</br>
+
+## **Docker Architecture**
+
+![ThirdImage](./images/ThirdImage.png)
+
+&emsp;We can divide the docker into three main parts, Client, DockerHost and, registry.</br>
+
+- Client</br>
+&emsp;The command line it self that you use for interact with the docker, when you write like ```docker images``` at the command line, you are using the docker Client.</br>
+
+- Docker Host</br>
+&emsp;This guy is also called by Docker Daemon and its basically the a service at the machine were the docker is running. You can use the Client to interact directly with the Docker Daemon is self. Something important about the Host is that you don't need to have him at your machine to use the Client, the Host can be in a server machine and you can interact with this Host using your local machine just using the Client.</br>
+
+- Registry</br>
+&emsp;You can think the registry just like a place were the images docker can use are saved and you can download and use on your machine. There are many registry's some more used and reliable than others, the most famous is the DockerHub</br>
+
+## **Creating a Docker image**
+
+![ImageCreation](./images/ImageCreation.png)
+
+&emsp;First off all we need to understand the concept of the DockerFile, a DockerFile is just a common text file where you write all the instructions of how you want your image to be created and delivery it to Docker to him create your image.</br>
+&emsp;There are some main parameters we need to understand to build our first DockerFile, there is many others parameters possibles in a dockerfile, they are at this [link](https://docs.docker.com/engine/reference/builder).</br>
+
+- FROM</br>
+&emsp;This parameter is where you insert your start point, the base image it is gonna be used to create the new image.</br>
+
+- RUN</br>
+&emsp;The commands are gonna run inside this image, if you need to install a package, give some permission to user's, move some file.</br>
+
+- COPY</br>
+&emsp;Copy files inside the image, this files can come from your local machine, a server, or a host machine.</br>
+
+- ENV</br>
+&emsp;To declare environment variables.</br>
+
+- CMD</br>
+&emsp;Witch command will be executed you use the ```docker run``` </br>
+
 ## References
 
 1. <https://www.youtube.com/watch?v=RE31GWJGkwA&ab_channel=MateusMuller>
+
+2. <https://docs.docker.com/get-docker/>
+
+3. <https://docs.docker.com/engine/reference/builder/>
