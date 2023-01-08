@@ -96,7 +96,7 @@
 
 &emsp;Now let's create our first image using a application made with [Flask](https://flask.palletsprojects.com/en/2.2.x/quickstart/?highlight=quickstart).</br>
 
-1. Create a file, for example `app.py` and copy the code into, as you can see this code imports the flask lib, but by default the OS does not came with that, so we have to add it manually.</br>
+1. Create a file, for example `app.py` and copy the code (the code is at the link over here at Flask) into, as you can see this code imports the flask lib, but by default the OS does not came with that, so we have to add it manually.</br>
 2. We need to set the libs we are going to use to be local, so let's create a environment. First type `python3 -m venv .venv` to create this environment, here we are using the venv module.
 3. After that you use the source command `source .venv/bin/activate` to activate the virtual environment and set it to be used, so now everything command we use is gonna be executed in there.
 4. Now you can use the pip to install the Flask `pip install flask`
