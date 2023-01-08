@@ -91,6 +91,25 @@
 &emsp;But why this stack system exists? This is very useful to create the container, the ultimate goal when using Docker. When you ask your image to create the container it is just necessary to create one more layer on all others pre-existent.</br>
 &emsp;Now there is something important to understand, the image is immutable and read-only (RO), the new layer to be created is the container it self and is read-write (RW), this means you can change the content of the container but not image's. It makes really fast and easy the deploy, start, stop, run, delete, all the actions involving the container.</br>
 
+## **Hand's On**
+
+&emsp;Now let's create our first image using a application made with [Flask](https://flask.palletsprojects.com/en/2.2.x/quickstart/?highlight=quickstart).</br>
+
+1. Create a file, for example `app.py` and copy the code into, as you can see this code imports the flask lib, but by default the OS does not came with that, so we have to add it manually.</br>
+2. We need to set the libs we are going to use to be local, so let's create a environment. First type `python3 -m venv .venv` to create this environment, here we are using the venv module.
+3. After that you use the source command `source .venv/bin/activate` to activate the virtual environment and set it to be used, so now everything command we use is gonna be executed in there.
+4. Now you can use the pip to install the Flask `pip install flask`
+5. For now you can use `flask run` to check if everything is working, it should appear a ip and port for you to connect to your application at the browser with a Hello, World message.
+6. Now let's create the dockerfile, there is an example of dockerfile on this repository to facilitate your journey and there is some explanations in there about the parameters. Bellow we have the command used to download the image used as the base image.
+   - `docker pull python:3.10-bullseye` </br>
+7. Now we have our base image, just need to write the dockerfile following the steps and writing into him all the information he needs to build our new image. Very careful now because the dockerfile need to be written at a correct order, like a procedural language line after line, otherwise the dockerfile wont work correctly.
+8. Run a `pip freeze` to help you check all the dependencies your application is gonna need, then run `pip freeze > requirements.txt` to insert those dependencies into a txt file. This file is gonna be really useful to be copied into the container and used to install all the necessary dependencies, facilitating a lot all the process.
+9. After builded the all dockerfile, let's create the image. Run the command `docker build -t flask-app:dev-0.0.1`. The `-t` parameter is used to give a name (flask-app) and tag (dev-0.0.1) to our image, feel free to change the name and tag of your own image. Now you can run `docker images` to check if the image has been created correctly, if the process was successful a image called `flask-app` is gonna appear at the docker images.
+10. FINALLY let's create our container. With your image created correctly just type `docker run -d -P flask-app:dev-0.0.1` (caution with the name you used to create the image, must be the same here afeter the `-P` parameter) to create the container. The `-d` parameter is used to set the container to run at the background of your machine, not using your current command line. The `-P` parameter says to the container to use the already determined port (5000) as a port to your dockerhost, mapping the port.
+11. That is it, now you have your container active. Type `docker ps` to check to active containers than type `localhost:{PORT}` at your browser to access the running container, the PORT must be the number where `49158` is at [this image](./images/PortNumber.png).
+12. Now, you can type `docker logs {CONTAINER_ID} -f` to check the log of a container, all access, successful or not, on that port is gonna be registered by this log, the `-f` parameter is to make the command to continuously check for new interactions with that container.
+13. Some others commands can be used are: `docker exec {CONTAINER_ID}`, the parameter `exec` is to execute a command inside the container, for example use the `ls` command to list all the folders and files in the container. Or you can enter the container with `docker exec -it {CONTAINER_ID} bash`, the `-it` parameter is to enter the container and the `bash` is to enter as a bash user, being able to run commands.
+
 ## **References and other content**
 
 1. <https://www.youtube.com/watch?v=RE31GWJGkwA&ab_channel=MateusMuller>
@@ -99,3 +118,4 @@
 4. <https://docs.docker.com/storage/storagedriver/overlayfs-driver/>
 5. <https://man7.org/linux/man-pages/man7/namespaces.7.html>
 6. <https://itsfoss.com/linux-daemons/>
+7. <https://flask.palletsprojects.com/en/2.2.x/quickstart/?highlight=quickstart>
