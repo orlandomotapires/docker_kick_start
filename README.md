@@ -19,6 +19,7 @@
 [Installing Docker](#installing-docker)</br>
 [Creating a Docker image](#creating-a-docker-image)</br>
 [Docker Image Creation Hands-On](#docker-image-creation-hands-on)</br>
+[Docker Main Commands](#main-docker-commands-and-their-uses)</br>
 
 ---
 
